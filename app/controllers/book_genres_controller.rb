@@ -1,2 +1,0 @@
-class BookGenresController < ApplicationController
-end
