@@ -4,7 +4,7 @@ class CreateBooks < ActiveRecord::Migration[6.0]
       t.string :title
       t.text :description
       t.integer :author_id
-      t.iteger :current_chapter
+      t.integer :current_chapter
       t.integer :created_by
 
       t.timestamps
