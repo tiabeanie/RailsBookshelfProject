@@ -1,0 +1,21 @@
+<% content_for :header do %>
+  <h1>Authors</h1>
+<% end %>
+
+<% content_for :vertical_nav do %>
+  <ul class="nav flex-column">
+    <li class="nav-item mb-3">
+      <%= button_to "Back to Books", books_path, :method => "get", class: "btn btn-info btn-block" %>
+    </li>
+    <li class="nav-item">
+      <%= button_to "Back to my Bookshelves", user_bookshelves_path(current_user), :method => "get", class: "btn btn-info btn-block" %>
+    </li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <p>Click on an Author below to find more books</p>
+  <% alphebetize(@authors).each do |author| %>
+    <p><%= link_to author.name, author_path(author) %></p>
+  <% end %>
+<% end %>
