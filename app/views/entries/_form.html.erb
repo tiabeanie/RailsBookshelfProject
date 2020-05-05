@@ -1,0 +1,20 @@
+<% if entry.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <ul>
+    <% entry.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for [book, entry] do |f| %>
+  <strong><%= f.label :bookshelf %></strong>
+  <%= f.collection_select :bookshelf_id, alphebetize(current_user.bookshelves), :id, :name %><br>
+  <strong><%= f.label :user_notes %></strong>
+  <%= f.text_field :user_notes, class:"form-control" %><br>
+  <strong><%= f.label :user_chapter %></strong>
+  <%= f.number_field :user_chapter, class:"form-control" %><br>
+  <%= f.hidden_field :user_id, value: current_user.id %><br>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

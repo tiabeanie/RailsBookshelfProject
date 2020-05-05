@@ -1,0 +1,14 @@
+<% entries.each do |entry| %>
+  <div class="card card-sm mb-3">
+    <h5 class="card-header"><%= link_to entry.bookshelf.name, user_bookshelf_path(current_user, entry.bookshelf) %></h5>
+    <div class="card-body">
+      <p><strong>Your Notes</strong>:<br>
+        <%= entry.user_notes %><br>
+      <strong>Your Chapter</strong>: <%= entry.user_chapter %></p>
+      <%= button_to "Edit Bookshelf Details", edit_book_entry_path(book, entry), :method => "get", class: "btn btn-warning btn-sm btn-block" %>
+      <%= form_for entry, method: :delete do |f| %>
+        <%= f.submit "Remove From Bookshelf", class:"btn btn-sm btn-danger btn-block" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
