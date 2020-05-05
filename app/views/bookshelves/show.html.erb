@@ -1,0 +1,36 @@
+<% content_for :header do %>
+  <h1><%= @bookshelf.name %></h1>
+  <p><em><%= @bookshelf.description %></em></p>
+<% end %>
+
+<% content_for :vertical_nav do %>
+  <ul class="nav flex-column">
+    <li class="nav-item mb-3">
+      <%= button_to "Edit this Bookshelf", edit_user_bookshelf_path(current_user, @bookshelf), :method => "get", class: "btn btn-warning btn-block" %>
+    </li>
+    <li class="nav-item mb-3">
+      <%= button_to "Back to All Bookshelves", user_bookshelves_path(current_user), :method => "get", class: "btn btn-info btn-block" %>
+    </li>
+    <li class="nav-item">
+      <%= button_to "Add Books", books_path, :method => "get", class: "btn btn-info btn-block" %>
+    </li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <% @books.each do |book| %>
+      <div class="card mb-3">
+        <h5 class="card-header"><%= link_to book.title, book_path(book) %></h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Author: <%= book.author.name %></li>
+          <li class="list-group-item">Chapter: <%= book.current_chapter %></li>
+        </ul>
+      </div>
+  <% end %>
+<% end %>
+
+<% content_for :sidebar do %>
+  <%= form_tag(bookshelf_path, method: "delete") do %>
+    <%= submit_tag("Delete Bookshelf", class: "btn btn-danger btn-block") %>
+  <% end %>
+<% end %>
