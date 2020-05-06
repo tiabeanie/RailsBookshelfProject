@@ -1,21 +1,9 @@
-<% content_for :header do %>
-  <h1>Authors</h1>
-<% end %>
-
-<% content_for :vertical_nav do %>
-  <ul class="nav flex-column">
-    <li class="nav-item mb-3">
-      <%= button_to "Back to Books", books_path, :method => "get", class: "btn btn-info btn-block" %>
-    </li>
-    <li class="nav-item">
-      <%= button_to "Back to my Bookshelves", user_bookshelves_path(current_user), :method => "get", class: "btn btn-info btn-block" %>
-    </li>
-  </ul>
-<% end %>
-
-<% content_for :content do %>
-  <p>Click on an Author below to find more books</p>
-  <% alphebetize(@authors).each do |author| %>
-    <p><%= link_to author.name, author_path(author) %></p>
-  <% end %>
-<% end %>
+<div class="jumbotron jumbotron-fluid" style="background-color:white;border:2px solid #343a40;">
+  <div class="container">
+    <h1 class="display-4">Bookshelves</h1>
+    <p><img src="/images/shows.jpg" style="width:100%;"></p>
+    <center><p class="lead">Keep track of your books, all in one place!</p></center>
+    <%= button_to "Sign Up", new_user_path, :method => "get", class: "btn btn-success btn-block" %>
+    <%= button_to "Log In", login_path, :method => "get", class: "btn btn-info btn-block" %>
+  </div>
+</div>
