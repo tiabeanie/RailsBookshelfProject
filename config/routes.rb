@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
-  resources :authors
-  resources :genres
-  resources :entries
-  resources :book_genres
+  root 'welcome#index'
+  resources :users do
+    get 'shows/behind', to: 'shows#behind'
+    resources :watchlists
+    resources :shows, only: [:index]
+  end
   resources :bookshelves
-  resources :users
-  resources :books
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :entries, only: [:destroy]
+  resources :books do
+    resources :entries, except: [:index, :destroy]
+  end
+  resources :genres, only: [:index, :show]
+  resources :authors, only: [:index, :show]
+  get '/search', to: 'books#search'
+  get '/auth/google/callback', to: 'users#google_login'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
 end
