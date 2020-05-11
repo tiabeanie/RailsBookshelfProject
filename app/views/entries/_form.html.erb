@@ -13,8 +13,6 @@
   <%= f.collection_select :bookshelf_id, alphabetize(current_user.bookshelves), :id, :name %><br>
   <strong><%= f.label :user_notes %></strong>
   <%= f.text_field :user_notes, class:"form-control" %><br>
-  <strong><%= f.label :user_chapter %></strong>
-  <%= f.number_field :user_chapter, class:"form-control" %><br>
   <%= f.hidden_field :user_id, value: current_user.id %><br>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>

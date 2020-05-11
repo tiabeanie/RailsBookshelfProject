@@ -4,12 +4,10 @@ one:
   title: MyString
   description: MyText
   author_id: 1
-  current_chapter: 
   created_by: 1
 
 two:
   title: MyString
   description: MyText
   author_id: 1
-  current_chapter: 
   created_by: 1

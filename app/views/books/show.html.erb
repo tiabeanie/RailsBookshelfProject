@@ -21,7 +21,6 @@
 <% content_for :content do %>
   <p><%= @book.description %></p>
   <p><strong>Author</strong>: <%= link_to @book.author.name, author_path(@book.author) %></p>
-  <p><strong>Current Chapter</strong>: <%= @book.current_chapter %></p>
   <p><strong>Genres</strong>: <%= @book.genres.map { |genre| link_to(genre.name, genre_path(genre)) }.join(', ').html_safe %></p>
 <% end %>
 

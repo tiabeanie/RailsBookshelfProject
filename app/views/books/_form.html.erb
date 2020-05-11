@@ -23,9 +23,6 @@
     <% end %>
   </div>
 
-  <strong><%= f.label :current_chapter %><br></strong>
-  <%= f.number_field :current_chapter, class:"form-control" %><br>
-
   <div class="form-group">
     <strong><%= f.label :genre %></strong><br>
     <%= f.collection_check_boxes(:genre_ids, alphebetize(Genre.all), :id, :name) do |b| %>
@@ -66,9 +63,6 @@
       <%= author_fields.text_field :name %>
     <% end %>
   </div>
-
-  <strong><%= f.label :current_chapter %><br></strong>
-  <%= f.number_field :current_chapter, class:"form-control" %><br>
 
   <div class="form-group">
     <strong><%= f.label :genre %></strong><br>

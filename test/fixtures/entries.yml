@@ -5,11 +5,9 @@ one:
   book_id: 
   user_id: 1
   user_notes: MyText
-  user_chapter: 1
 
 two:
   bookshelf_id: 1
   book_id: 
   user_id: 1
   user_notes: MyText
-  user_chapter: 1

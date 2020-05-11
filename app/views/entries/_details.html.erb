@@ -4,7 +4,6 @@
     <div class="card-body">
       <p><strong>Your Notes</strong>:<br>
         <%= entry.user_notes %><br>
-      <strong>Your Chapter</strong>: <%= entry.user_chapter %></p>
       <%= button_to "Edit Bookshelf Details", edit_book_entry_path(book, entry), :method => "get", class: "btn btn-warning btn-sm btn-block" %>
       <%= form_for entry, method: :delete do |f| %>
         <%= f.submit "Remove From Bookshelf", class:"btn btn-sm btn-danger btn-block" %>

@@ -7,7 +7,6 @@ class Book < ApplicationRecord
     belongs_to :author
 
     validates :title, presence: true, uniqueness: { scope: :author_id }
-    validates :current_chapter, presence: true, numericality: { greater_than: 0 }
 
     scope :search, -> (query) { where("title LIKE ?", "%" + query + "%") }
     

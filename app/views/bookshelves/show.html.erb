@@ -23,7 +23,6 @@
         <h5 class="card-header"><%= link_to book.title, book_path(book) %></h5>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Author: <%= book.author.name %></li>
-          <li class="list-group-item">Chapter: <%= book.current_chapter %></li>
         </ul>
       </div>
   <% end %>

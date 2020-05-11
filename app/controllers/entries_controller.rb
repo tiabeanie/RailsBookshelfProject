@@ -44,7 +44,7 @@ class EntriesController < ApplicationController
 
     private 
     def entry_params
-        params.require(:entry).permit(:bookshelf_id, :user_id, :user_notes, :user_chapter)
+        params.require(:entry).permit(:bookshelf_id, :user_id, :user_notes)
     end
 
     def set_entry
