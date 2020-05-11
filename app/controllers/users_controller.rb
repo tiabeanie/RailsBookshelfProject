@@ -46,7 +46,7 @@ class UsersController < ApplicationController
 
         if @user.save
             session[:user_id] = @user.id
-            redirect_to user_watchlists_path(@user)
+            redirect_to user_bookshelves_path(@user)
         else
             render :new
         end

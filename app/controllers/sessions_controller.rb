@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         user = User.find_by(email: params[:session][:email].downcase)
             if user && user.authenticate(params[:session][:password])
             session[:user_id] = user.id
-            redirect_to user_bookshelves_path(user)
+            redirect_to user__path(user)
         else
             flash[:danger] = "Wrong email and/or password"
             render :new

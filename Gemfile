@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'devise'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
