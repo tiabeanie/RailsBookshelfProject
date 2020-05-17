@@ -7,7 +7,7 @@
     </tr>
   </thead>
   <tbody>
-    <% sort(books).each do |book| %>
+    <% @books.sort.each do |book| %>
       <tr>
         <th scope="row"><%= link_to book.title, book_path(book) %></th>
         <td><%= book.author.name %></td>

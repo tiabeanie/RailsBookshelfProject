@@ -9,7 +9,7 @@
     </li>
     <% if @book.created_by == current_user.id %>
       <li class="nav-item mb-3">
-        <%= button_to "Update book details", edit_book_path(@book), :method => "get", class: "btn btn-info btn-block" %>
+        <%= button_to "Update Book Details", edit_book_path(@book), :method => "get", class: "btn btn-info btn-block" %>
       </li>
     <% end %>
     <li class="nav-item">
@@ -24,7 +24,3 @@
   <p><strong>Genres</strong>: <%= @book.genres.map { |genre| link_to(genre.name, genre_path(genre)) }.join(', ').html_safe %></p>
 <% end %>
 
-<% content_for :sidebar do %>
-  <h4>My Bookshelves</h4>
-  <%= bookshelf_options(@entries, @book) %>
-<% end %>

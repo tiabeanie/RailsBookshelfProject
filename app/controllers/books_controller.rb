@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
     before_action :require_login
-    before_action :set_show, only: [:show, :edit, :update]
+    before_action :set_book, only: [:show, :edit, :update]
     before_action :created_by_current_user, only: [:edit, :update]
     helper_method :current_user 
 
@@ -14,7 +14,7 @@ class BooksController < ApplicationController
     end
 
     def show
-        @entries = @book.books_bookshelves_by_user(current_user.id)
+        @entries = @book.shows_bookshelves_by_user(current_user.id)
     end
 
     def new 
@@ -38,7 +38,7 @@ class BooksController < ApplicationController
     def update 
         @book.update(book_params)
         if @book.save 
-            flash[:message] = "#{book.title} has been updated"
+            flash[:message] = "#{@book.title} has been updated"
             redirect_to book_path(@book)
         else
             render :edit

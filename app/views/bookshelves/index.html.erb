@@ -1,11 +1,11 @@
 <% content_for :header do %>
-  <h1><%= current_user.username %>'s bookshelves</h1>
+  <h1><%= current_user.username %>'s Bookshelves</h1>
 <% end %>
 
 <% content_for :vertical_nav do %>
   <ul class="nav flex-column">
     <li class="nav-item mb-3">
-      <%= button_to "Create a new Bookshelf", new_user_bookshelf_path(current_user), :method => "get", class: "btn btn-info btn-block" %>
+      <%= button_to "Create a New Bookshelf", new_user_bookshelf_path(current_user), :method => "get", class: "btn btn-info btn-block" %>
     </li>
     <li class="nav-item mb-3">
       <%= button_to "Add a Book", books_path, :method => "get", class: "btn btn-info btn-block" %>
@@ -16,9 +16,9 @@
 
 <% content_for :content do %>
   <% if @bookshelves.count == 0 %>
-    <p><center>You don't have any bookshelves! <%= link_to "Create One", new_user_bookshelf_path(current_user) %> to start adding books!</center></p>
+    <p><center>You don't have any Bookshelves! <%= link_to "Create One", new_user_bookshelf_path(current_user) %> to start adding books!</center></p>
   <% else %>
-    <% alphabetize(@bookshelves).each do |bookshelf| %>
+    <% @bookshelves.sort.each do |bookshelf| %>
       <div class="card border-info mb-3">
         <div class="card-body">
           <h5 class="card-title"><%= link_to bookshelf.name, user_bookshelf_path(current_user, bookshelf) %></h5>

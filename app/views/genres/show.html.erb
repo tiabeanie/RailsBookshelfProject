@@ -15,7 +15,7 @@
 
 <% content_for :content do %>
   <p>Books:</p>
-  <% alphebetize(@books).each do |book| %>
+  <% @books.sort.each do |book| %>
     <p><%= link_to book.title, book_path(book) %></p>
   <% end %>
 <% end %>
