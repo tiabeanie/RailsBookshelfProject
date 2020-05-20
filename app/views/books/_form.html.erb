@@ -25,8 +25,13 @@
 
   <div class="form-group">
     <strong><%= f.label :genre %></strong><br>
-    <%= f.collection_select :genre_id, (Genre.all), :id, :name, :include_blank => true%> or new:
-    <%= f.fields_for :genre_attributes do |gere_fields| %>
+    <%= f.collection_check_boxes(:genre_ids, (Genre.all), :id, :name) do |genre| %>
+      <div class="form-check form-check-inline">
+        <%= genre.check_box(class: "form-check-input") %>
+      </div>
+    <% end %>
+    or new:
+    <%= f.fields_for :genres, book.genres.build do |genre_fields| %>
       <%= genre_fields.text_field :name %>
     <% end %>
   </div>
