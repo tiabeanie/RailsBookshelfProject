@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            session[:user_id] = @user.user_id
+            session[:user_id] = user.user_id
             redirect_to user_bookshelves_path(@user)
         else
             render :new

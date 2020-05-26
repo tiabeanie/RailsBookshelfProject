@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   resources :genres, only: [:index, :show]
   resources :authors, only: [:index, :show]
   get '/search', to: 'books#search'
-  get '/auth/google/callback', to: 'sessions#create'
+  get '/auth/google_oauth2/callback', to: 'sessions#create'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+  post '/auth/google', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 end
