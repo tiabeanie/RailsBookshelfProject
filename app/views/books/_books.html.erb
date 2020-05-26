@@ -3,7 +3,6 @@
     <tr>
       <th scope="col">Title</th>
       <th scope="col">Author</th>
-      <th scope="col">Genres</th>
     </tr>
   </thead>
   <tbody>
@@ -11,7 +10,6 @@
       <tr>
         <th scope="row"><%= link_to book.title, book_path(book) %></th>
         <td><%= book.author.name %></td>
-        <td><%= book.genres.map { |genre| genre.name }.join(', ') %></td>
       </tr>
     <% end %>
   </tbody>

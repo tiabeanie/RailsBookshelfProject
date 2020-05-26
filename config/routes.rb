@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   resources :books do
     resources :entries, except: [:index, :destroy]
   end
-  resources :genres, only: [:index, :show]
   resources :authors, only: [:index, :show]
   get '/search', to: 'books#search'
   get '/auth/google_oauth2/callback', to: 'sessions#create'
