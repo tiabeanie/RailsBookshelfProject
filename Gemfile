@@ -31,7 +31,7 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'devise'
 gem 'omniauth'
-gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 gem 'dotenv-rails'
 
 group :development, :test do

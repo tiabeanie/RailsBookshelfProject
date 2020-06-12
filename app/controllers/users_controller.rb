@@ -34,7 +34,7 @@ class UsersController < ApplicationController
         end
     end
 
-    def google_login 
+    def facebook_login 
         @user = User.find_by(email: auth[:info][:email])
         if @user.nil?
             @user = User.new(

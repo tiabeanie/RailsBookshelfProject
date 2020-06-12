@@ -11,9 +11,8 @@ Rails.application.routes.draw do
   end
   resources :authors, only: [:index, :show]
   get '/search', to: 'books#search'
-  get '/auth/google_oauth2/callback', to: 'sessions#create'
+  get '/auth/facebook/callback', to: 'users#facebook_login'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
-  post '/auth/google', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 end

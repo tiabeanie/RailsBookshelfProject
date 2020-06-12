@@ -1,6 +1,7 @@
 <h1>Sign Up for Bookshelves</h1>
-<p><%= button_to "Sign Up with Google", '/auth/google', class: "btn btn-outline-primary" %></p>
-<p>or enter in your details below:</p>
+<p><%= link_to('Sign Up with Facebook', '/auth/facebook') %></p>
+<p>or enter your details below:</p>
+
 
 <% if @user.errors.any? %>
 <div class="alert alert-danger" role="alert">

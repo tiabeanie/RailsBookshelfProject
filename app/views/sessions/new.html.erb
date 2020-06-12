@@ -1,5 +1,5 @@
 <h1>Login</h1>
-<p><%= button_to "Login with Google", '/auth/google_oauth2', class: "btn btn-outline-primary" %></p>
+<p><%= link_to('Login with Facebook', '/auth/facebook') %></p>
 <p>or login below:</p>
 
 <%= form_for(:session, url: login_path) do |f| %>
