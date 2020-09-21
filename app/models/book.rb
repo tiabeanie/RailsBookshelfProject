@@ -8,8 +8,6 @@ class Book < ApplicationRecord
 
     scope :search, -> (query) { where("title LIKE ?", "%" + query + "%") }
 
-    scope :harry_potter, -> { where("title: = Harry Potter")}
-    
     def author_attributes=(author_attributes)
         author_attributes.values.each do |author_attrubute|
             unless author_attrubute.blank?
