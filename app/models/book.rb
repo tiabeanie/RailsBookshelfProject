@@ -7,6 +7,8 @@ class Book < ApplicationRecord
     validates :title, presence: true, uniqueness: { scope: :author_id }
 
     scope :search, -> (query) { where("title LIKE ?", "%" + query + "%") }
+
+    scope :harry_potter, -> { where("title: = Harry Potter")}
     
     def author_attributes=(author_attributes)
         author_attributes.values.each do |author_attrubute|

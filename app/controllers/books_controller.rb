@@ -50,6 +50,11 @@ class BooksController < ApplicationController
         render :index
     end
 
+    def harry_potter
+        Book.harry_potter
+        render :harry_potter
+    end
+
     private 
     def book_params
         params.require(:book).permit(:title, :description, :author_id, :created_by, author_attributes:[:name])
