@@ -1,10 +1,13 @@
 class EntriesController < ApplicationController
     before_action :require_login
-    before_action :set_entry, only: [:edit, :update, :destroy]
+    before_action :set_entry, only: [:edit, :update, :destroy, :show]
 
     def new
         @entry = Entry.new
         @entry.book = Book.find_by(id: params[:book_id])
+    end
+
+    def show
     end
 
     def create
