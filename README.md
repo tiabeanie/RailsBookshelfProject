@@ -1,24 +1,19 @@
-# README
+Bookshelves on Rails
+Welcome to the Bookshelves App! This app was created to organize books! 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Installation
+Clone this repository and execute:
 
-Things you may want to cover:
+$bundle install
+Then execute:
 
-* Ruby version
+$rails db:migrate
+to create the database.
 
-* System dependencies
+Execute:
 
-* Configuration
+$rails s
+and navigate to use a local server and navigate to localhost:3000 to preview the app.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+License
+The app is available as open source under the terms of the MIT License.
