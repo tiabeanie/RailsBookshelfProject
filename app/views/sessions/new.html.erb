@@ -1,0 +1,11 @@
+<h1>Login</h1>
+<p><%= link_to('Login with Facebook', '/auth/facebook') %></p>
+<p>or login below:</p>
+
+<%= form_for(:session, url: login_path) do |f| %>
+  <strong><%= f.label :email %></strong> <%= f.text_field :email, class:"form-control"  %><br>
+  <strong><%= f.label :password %></strong> <%= f.password_field :password, class:"form-control"  %><br>
+  <%= f.submit "Login", class: "btn btn-primary" %>
+<% end %>
+
+<p>Create an Account <%= link_to "Sign up!", new_user_path %></p>

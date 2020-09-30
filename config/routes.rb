@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     resources :bookshelves
     resources :books, only: [:index]
   end
-  resources :bookshelves
+  resources :bookshelves do
+    resources :entries, only: [:index]
+  end
   resources :entries, only: [:destroy]
   resources :books do
     resources :entries, except: [:index, :destroy]

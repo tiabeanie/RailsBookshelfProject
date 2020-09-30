@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
     before_action :require_login
-    before_action :set_entry, only: [:edit, :update, :destroy, :show]
+    before_action :set_entry, only: [:edit, :update, :destroy, :show, :index]
 
     def new
         @entry = Entry.new
@@ -19,6 +19,11 @@ class EntriesController < ApplicationController
         else
             render :new
         end
+    end
+
+    def index 
+        @bookshelf = Bookshelf.find_by(id: params[:bookshelf_id])
+        @entries = @bookshelf.entries
     end
 
     def edit

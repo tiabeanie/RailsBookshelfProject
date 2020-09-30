@@ -1,0 +1,20 @@
+<% content_for :header do %>
+  <h1><%= @bookshelf.name %>'s Entries</h1>
+<% end %>
+
+
+<% content_for :content do %>
+  <% if @entries.count == 0 %>
+    <p><center>This shelf doesn't have any entries! <%= link_to "Create One", new_user_bookshelf_path(current_user) %> to start adding books!</center></p>
+  <% else %>
+    <% @entries.sort.each do |entry| %>
+      <div class="card border-info mb-3">
+        <div class="card-body">
+           <p class="card-text"><%= entry.book.title %></p>
+           <p class="card-text"><%= entry.book.author.name %></p>
+           <p class="card-text"><%= entry.user_notes %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

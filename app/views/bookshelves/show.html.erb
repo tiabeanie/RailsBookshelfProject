@@ -14,6 +14,9 @@
     <li class="nav-item">
       <%= button_to "Add Books", books_path, :method => "get", class: "btn btn-info btn-block" %>
     </li>
+    <li class="nav-item">
+      <%= button_to "Details", bookshelf_entries_path(@bookshelf), :method => "get", class: "btn btn-info btn-block" %>
+    </li>
   </ul>
 <% end %>
 
